@@ -43,6 +43,7 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPacked = new System.Windows.Forms.TextBox();
+            this.printDocTray = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.numQTY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPacked)).BeginInit();
             this.SuspendLayout();
@@ -198,6 +199,10 @@
             this.txtPacked.TabIndex = 0;
             this.txtPacked.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPacked_KeyDown);
             // 
+            // printDocTray
+            // 
+            this.printDocTray.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocTray_PrintPage);
+            // 
             // Packing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -243,5 +248,6 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPacked;
+        private System.Drawing.Printing.PrintDocument printDocTray;
     }
 }

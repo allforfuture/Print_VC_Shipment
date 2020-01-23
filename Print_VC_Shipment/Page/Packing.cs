@@ -145,6 +145,11 @@ AND Child.status=1";
                 MessageBox.Show($"{model}号不能为空", "SN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (listvSN.Items.Count==0)
+            {
+                MessageBox.Show("列表中没有新输入的SN", "SN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (numPacked.Value != numQTY.Value)
             {
                 DialogResult dialogResult=MessageBox.Show("实际输入的SN个数与预设值不相等，是否继续录入数据库", "数据库", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -166,7 +171,28 @@ values ('{txtParent.Text}', '{model}', 'printed', NOW(), '{Login.User}', 1,'打�
             else
                 return;
 
-            MessageBox.Show("打印函数()");
+            #region 打印
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (model == Model.tray)
+                {
+                    printDocTray.PrinterSettings = printDialog.PrinterSettings;
+                    printDocTray.Print();
+                }
+                else
+                {
+                    Print print = new Print("", "", "", "");
+                    print.Show();//预览，不显示的话，全是空白
+                    if (!print.PrintDoc(printDialog.PrinterSettings))
+                    {
+                        print.Dispose();
+                        return;
+                    }
+                    print.Dispose();
+                }
+            }
+            #endregion
 
             #region 控件初始化
             txtParent.Text = "";
@@ -202,6 +228,16 @@ and parent_sn='{txtPacked.Text}'";
                 listvSN.Items.Clear();
                 #endregion
             }
+        }
+        
+        private void printDocTray_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            string sn = txtParent.Text;
+            //string sn = "N_4878595_0122_T_0001";
+            Image image = Unit.Code.Help.QRcode(sn, ZXing.BarcodeFormat.DATA_MATRIX, 0, 0);
+            e.Graphics.DrawImage(image, 5, 5);
+            Brush b = new SolidBrush(Color.Black);
+            e.Graphics.DrawString(sn, new Font("Arial", 11), b, 0, 0);
         }
     }
 }

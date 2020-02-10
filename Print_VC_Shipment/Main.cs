@@ -52,5 +52,10 @@ namespace Print_VC_Shipment
         {
             new Page.Invoice().ShowDialog();
         }
+
+        private void btnReprint_Click(object sender, EventArgs e)
+        {
+            new Page.Reprint().ShowDialog();
+        }
     }
 }

@@ -61,7 +61,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(121, 21);
             this.txtPassword.TabIndex = 13;
-            this.txtPassword.Text = "test";
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEnter_KeyDown);
             // 
             // txtUser
@@ -70,7 +69,6 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(121, 21);
             this.txtUser.TabIndex = 12;
-            this.txtUser.Text = "20181115110";
             this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEnter_KeyDown);
             // 
             // btnCancel

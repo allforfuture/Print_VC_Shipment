@@ -84,7 +84,7 @@
             // 
             // btnReserve
             // 
-            this.btnReserve.Location = new System.Drawing.Point(306, 22);
+            this.btnReserve.Location = new System.Drawing.Point(294, 22);
             this.btnReserve.Name = "btnReserve";
             this.btnReserve.Size = new System.Drawing.Size(75, 23);
             this.btnReserve.TabIndex = 2;
@@ -96,7 +96,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("宋体", 18F);
-            this.label4.Location = new System.Drawing.Point(302, 76);
+            this.label4.Location = new System.Drawing.Point(322, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 24);
             this.label4.TabIndex = 21;
@@ -140,7 +140,7 @@
             // 
             this.numPacked.Enabled = false;
             this.numPacked.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numPacked.Location = new System.Drawing.Point(436, 71);
+            this.numPacked.Location = new System.Drawing.Point(447, 71);
             this.numPacked.Maximum = new decimal(new int[] {
             99999,
             0,

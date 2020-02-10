@@ -14,14 +14,15 @@ namespace Print_VC_Shipment.Page
     {
         public enum Model
         {
-            tray=0,
-            pack=1,
-            carton=2,
-            pallet=3
+            error = -1,
+            tray = 0,
+            pack = 1,
+            carton = 2,
+            pallet = 3
         }
 
         Model model;
-        
+        int printQTY;
         public Packing(Model selectModel)
         {
             InitializeComponent();
@@ -175,22 +176,28 @@ values ('{txtParent.Text}', '{model}', 'printed', NOW(), '{Login.User}', 1,'打�
             PrintDialog printDialog = new PrintDialog();
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
-                if (model == Model.tray)
-                {
+                #region 查询成品数量
+                printQTY = 0;
+                string sqlQTY = Print_VC_Shipment.Unit.DB.QTYsql.sql(model, txtParent.Text);
+                printQTY = (int)new Unit.DB.Help().ExecuteScalar(sqlQTY);
+                #endregion
+
+                //if (model == Model.tray)
+                //{
                     printDocTray.PrinterSettings = printDialog.PrinterSettings;
                     printDocTray.Print();
-                }
-                else
-                {
-                    Print print = new Print("", "", "", "");
-                    print.Show();//预览，不显示的话，全是空白
-                    if (!print.PrintDoc(printDialog.PrinterSettings))
-                    {
-                        print.Dispose();
-                        return;
-                    }
-                    print.Dispose();
-                }
+                //}
+                //else
+                //{
+                //    Print print = new Print("", "", "", "");
+                //    print.Show();//预览，不显示的话，全是空白
+                //    if (!print.PrintDoc(printDialog.PrinterSettings))
+                //    {
+                //        print.Dispose();
+                //        return;
+                //    }
+                //    print.Dispose();
+                //}
             }
             #endregion
 
@@ -237,7 +244,7 @@ and parent_sn='{txtPacked.Text}'";
             Image image = Unit.Code.Help.QRcode(sn, ZXing.BarcodeFormat.DATA_MATRIX, 0, 0);
             e.Graphics.DrawImage(image, 5, 5);
             Brush b = new SolidBrush(Color.Black);
-            e.Graphics.DrawString(sn, new Font("Arial", 11), b, 0, 0);
+            e.Graphics.DrawString(sn+" " +printQTY, new Font("Arial", 8), b, 35, 5);
         }
     }
 }

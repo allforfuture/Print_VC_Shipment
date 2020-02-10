@@ -29,40 +29,40 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnQuery = new System.Windows.Forms.Button();
-            this.dgvDisplay = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.chkPackTime_Q = new System.Windows.Forms.CheckBox();
-            this.dtpPackStart_Q = new System.Windows.Forms.DateTimePicker();
-            this.dtpPackEnd_Q = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPallet_Q = new System.Windows.Forms.TextBox();
-            this.txtInvoice_Q = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpInvoiceEnd_Q = new System.Windows.Forms.DateTimePicker();
             this.dtpInvoiceStart_Q = new System.Windows.Forms.DateTimePicker();
             this.chkInvoiceTime_Q = new System.Windows.Forms.CheckBox();
+            this.txtInvoice_Q = new System.Windows.Forms.TextBox();
+            this.txtPallet_Q = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpPackEnd_Q = new System.Windows.Forms.DateTimePicker();
+            this.dtpPackStart_Q = new System.Windows.Forms.DateTimePicker();
+            this.chkPackTime_Q = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnQuery = new System.Windows.Forms.Button();
+            this.dgvDisplay = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.txtPallet_S = new System.Windows.Forms.TextBox();
-            this.txtInvoice_S = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtDestination_S = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtInvoice_S = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPallet_S = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chktxtDestination_U = new System.Windows.Forms.CheckBox();
+            this.chkInvoice_U = new System.Windows.Forms.CheckBox();
+            this.dtpInvoiceTime_U = new System.Windows.Forms.DateTimePicker();
+            this.numCount_U = new System.Windows.Forms.NumericUpDown();
+            this.chkInvoiceTime_U = new System.Windows.Forms.CheckBox();
+            this.chkCount_U = new System.Windows.Forms.CheckBox();
             this.txtDestination_U = new System.Windows.Forms.TextBox();
             this.txtInvoice_U = new System.Windows.Forms.TextBox();
             this.txtPallet_U = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.chkCount_U = new System.Windows.Forms.CheckBox();
-            this.chkInvoiceTime_U = new System.Windows.Forms.CheckBox();
-            this.numCount_U = new System.Windows.Forms.NumericUpDown();
-            this.dtpInvoiceTime_U = new System.Windows.Forms.DateTimePicker();
-            this.chkInvoice_U = new System.Windows.Forms.CheckBox();
-            this.chktxtDestination_U = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -85,96 +85,12 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnQuery);
-            this.groupBox1.Location = new System.Drawing.Point(15, 166);
+            this.groupBox1.Location = new System.Drawing.Point(15, 145);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(381, 178);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "查询";
-            // 
-            // btnQuery
-            // 
-            this.btnQuery.Location = new System.Drawing.Point(107, 147);
-            this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(75, 23);
-            this.btnQuery.TabIndex = 0;
-            this.btnQuery.Text = "搜索";
-            this.btnQuery.UseVisualStyleBackColor = true;
-            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
-            // 
-            // dgvDisplay
-            // 
-            this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDisplay.Location = new System.Drawing.Point(12, 347);
-            this.dgvDisplay.Name = "dgvDisplay";
-            this.dgvDisplay.RowTemplate.Height = 23;
-            this.dgvDisplay.Size = new System.Drawing.Size(850, 177);
-            this.dgvDisplay.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 12);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "卡板号:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 12);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "发票号:";
-            // 
-            // chkPackTime_Q
-            // 
-            this.chkPackTime_Q.AutoSize = true;
-            this.chkPackTime_Q.Location = new System.Drawing.Point(26, 61);
-            this.chkPackTime_Q.Name = "chkPackTime_Q";
-            this.chkPackTime_Q.Size = new System.Drawing.Size(78, 16);
-            this.chkPackTime_Q.TabIndex = 21;
-            this.chkPackTime_Q.Text = "打包时间:";
-            this.chkPackTime_Q.UseVisualStyleBackColor = true;
-            // 
-            // dtpPackStart_Q
-            // 
-            this.dtpPackStart_Q.Location = new System.Drawing.Point(107, 58);
-            this.dtpPackStart_Q.Name = "dtpPackStart_Q";
-            this.dtpPackStart_Q.Size = new System.Drawing.Size(118, 21);
-            this.dtpPackStart_Q.TabIndex = 22;
-            // 
-            // dtpPackEnd_Q
-            // 
-            this.dtpPackEnd_Q.Location = new System.Drawing.Point(257, 58);
-            this.dtpPackEnd_Q.Name = "dtpPackEnd_Q";
-            this.dtpPackEnd_Q.Size = new System.Drawing.Size(118, 21);
-            this.dtpPackEnd_Q.TabIndex = 22;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(231, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 12);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "至";
-            // 
-            // txtPallet_Q
-            // 
-            this.txtPallet_Q.Location = new System.Drawing.Point(107, 27);
-            this.txtPallet_Q.Name = "txtPallet_Q";
-            this.txtPallet_Q.Size = new System.Drawing.Size(138, 21);
-            this.txtPallet_Q.TabIndex = 24;
-            // 
-            // txtInvoice_Q
-            // 
-            this.txtInvoice_Q.Location = new System.Drawing.Point(107, 89);
-            this.txtInvoice_Q.Name = "txtInvoice_Q";
-            this.txtInvoice_Q.Size = new System.Drawing.Size(138, 21);
-            this.txtInvoice_Q.TabIndex = 24;
             // 
             // label4
             // 
@@ -209,6 +125,93 @@
             this.chkInvoiceTime_Q.Text = "发票时间:";
             this.chkInvoiceTime_Q.UseVisualStyleBackColor = true;
             // 
+            // txtInvoice_Q
+            // 
+            this.txtInvoice_Q.Location = new System.Drawing.Point(107, 89);
+            this.txtInvoice_Q.Name = "txtInvoice_Q";
+            this.txtInvoice_Q.Size = new System.Drawing.Size(138, 21);
+            this.txtInvoice_Q.TabIndex = 24;
+            // 
+            // txtPallet_Q
+            // 
+            this.txtPallet_Q.Location = new System.Drawing.Point(107, 27);
+            this.txtPallet_Q.Name = "txtPallet_Q";
+            this.txtPallet_Q.Size = new System.Drawing.Size(138, 21);
+            this.txtPallet_Q.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(231, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 12);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "至";
+            // 
+            // dtpPackEnd_Q
+            // 
+            this.dtpPackEnd_Q.Location = new System.Drawing.Point(257, 58);
+            this.dtpPackEnd_Q.Name = "dtpPackEnd_Q";
+            this.dtpPackEnd_Q.Size = new System.Drawing.Size(118, 21);
+            this.dtpPackEnd_Q.TabIndex = 22;
+            // 
+            // dtpPackStart_Q
+            // 
+            this.dtpPackStart_Q.Location = new System.Drawing.Point(107, 58);
+            this.dtpPackStart_Q.Name = "dtpPackStart_Q";
+            this.dtpPackStart_Q.Size = new System.Drawing.Size(118, 21);
+            this.dtpPackStart_Q.TabIndex = 22;
+            // 
+            // chkPackTime_Q
+            // 
+            this.chkPackTime_Q.AutoSize = true;
+            this.chkPackTime_Q.Location = new System.Drawing.Point(26, 61);
+            this.chkPackTime_Q.Name = "chkPackTime_Q";
+            this.chkPackTime_Q.Size = new System.Drawing.Size(78, 16);
+            this.chkPackTime_Q.TabIndex = 21;
+            this.chkPackTime_Q.Text = "打包时间:";
+            this.chkPackTime_Q.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 12);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "发票号:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 12);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "卡板号:";
+            // 
+            // btnQuery
+            // 
+            this.btnQuery.Location = new System.Drawing.Point(107, 147);
+            this.btnQuery.Name = "btnQuery";
+            this.btnQuery.Size = new System.Drawing.Size(75, 23);
+            this.btnQuery.TabIndex = 0;
+            this.btnQuery.Text = "搜索";
+            this.btnQuery.UseVisualStyleBackColor = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
+            // 
+            // dgvDisplay
+            // 
+            this.dgvDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDisplay.Location = new System.Drawing.Point(12, 329);
+            this.dgvDisplay.Name = "dgvDisplay";
+            this.dgvDisplay.RowTemplate.Height = 23;
+            this.dgvDisplay.Size = new System.Drawing.Size(850, 290);
+            this.dgvDisplay.TabIndex = 1;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtDestination_S);
@@ -220,52 +223,10 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(17, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(281, 156);
+            this.groupBox2.Size = new System.Drawing.Size(246, 131);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "出货";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 12);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "卡板号:";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(70, 125);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "提交";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // txtPallet_S
-            // 
-            this.txtPallet_S.Location = new System.Drawing.Point(70, 21);
-            this.txtPallet_S.Name = "txtPallet_S";
-            this.txtPallet_S.Size = new System.Drawing.Size(155, 21);
-            this.txtPallet_S.TabIndex = 25;
-            // 
-            // txtInvoice_S
-            // 
-            this.txtInvoice_S.Location = new System.Drawing.Point(70, 47);
-            this.txtInvoice_S.Name = "txtInvoice_S";
-            this.txtInvoice_S.Size = new System.Drawing.Size(155, 21);
-            this.txtInvoice_S.TabIndex = 27;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 48);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 12);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "发票号:";
             // 
             // txtDestination_S
             // 
@@ -283,6 +244,48 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "备注:";
             // 
+            // txtInvoice_S
+            // 
+            this.txtInvoice_S.Location = new System.Drawing.Point(70, 47);
+            this.txtInvoice_S.Name = "txtInvoice_S";
+            this.txtInvoice_S.Size = new System.Drawing.Size(155, 21);
+            this.txtInvoice_S.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 48);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 12);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "发票号:";
+            // 
+            // txtPallet_S
+            // 
+            this.txtPallet_S.Location = new System.Drawing.Point(70, 21);
+            this.txtPallet_S.Name = "txtPallet_S";
+            this.txtPallet_S.Size = new System.Drawing.Size(155, 21);
+            this.txtPallet_S.TabIndex = 25;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(70, 100);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "提交";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 12);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "卡板号:";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.chktxtDestination_U);
@@ -296,12 +299,73 @@
             this.groupBox3.Controls.Add(this.txtPallet_U);
             this.groupBox3.Controls.Add(this.btnUpdate);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Location = new System.Drawing.Point(445, 12);
+            this.groupBox3.Location = new System.Drawing.Point(423, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(280, 210);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "修改出货信息";
+            // 
+            // chktxtDestination_U
+            // 
+            this.chktxtDestination_U.AutoSize = true;
+            this.chktxtDestination_U.Location = new System.Drawing.Point(18, 152);
+            this.chktxtDestination_U.Name = "chktxtDestination_U";
+            this.chktxtDestination_U.Size = new System.Drawing.Size(54, 16);
+            this.chktxtDestination_U.TabIndex = 34;
+            this.chktxtDestination_U.Text = "备注:";
+            this.chktxtDestination_U.UseVisualStyleBackColor = true;
+            // 
+            // chkInvoice_U
+            // 
+            this.chkInvoice_U.AutoSize = true;
+            this.chkInvoice_U.Location = new System.Drawing.Point(18, 53);
+            this.chkInvoice_U.Name = "chkInvoice_U";
+            this.chkInvoice_U.Size = new System.Drawing.Size(66, 16);
+            this.chkInvoice_U.TabIndex = 33;
+            this.chkInvoice_U.Text = "发票号:";
+            this.chkInvoice_U.UseVisualStyleBackColor = true;
+            // 
+            // dtpInvoiceTime_U
+            // 
+            this.dtpInvoiceTime_U.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+            this.dtpInvoiceTime_U.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpInvoiceTime_U.Location = new System.Drawing.Point(105, 117);
+            this.dtpInvoiceTime_U.Name = "dtpInvoiceTime_U";
+            this.dtpInvoiceTime_U.Size = new System.Drawing.Size(155, 21);
+            this.dtpInvoiceTime_U.TabIndex = 32;
+            // 
+            // numCount_U
+            // 
+            this.numCount_U.Location = new System.Drawing.Point(105, 85);
+            this.numCount_U.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numCount_U.Name = "numCount_U";
+            this.numCount_U.Size = new System.Drawing.Size(49, 21);
+            this.numCount_U.TabIndex = 31;
+            // 
+            // chkInvoiceTime_U
+            // 
+            this.chkInvoiceTime_U.AutoSize = true;
+            this.chkInvoiceTime_U.Location = new System.Drawing.Point(18, 119);
+            this.chkInvoiceTime_U.Name = "chkInvoiceTime_U";
+            this.chkInvoiceTime_U.Size = new System.Drawing.Size(78, 16);
+            this.chkInvoiceTime_U.TabIndex = 30;
+            this.chkInvoiceTime_U.Text = "发票时间:";
+            this.chkInvoiceTime_U.UseVisualStyleBackColor = true;
+            // 
+            // chkCount_U
+            // 
+            this.chkCount_U.AutoSize = true;
+            this.chkCount_U.Location = new System.Drawing.Point(18, 86);
+            this.chkCount_U.Name = "chkCount_U";
+            this.chkCount_U.Size = new System.Drawing.Size(66, 16);
+            this.chkCount_U.TabIndex = 30;
+            this.chkCount_U.Text = "成品数:";
+            this.chkCount_U.UseVisualStyleBackColor = true;
             // 
             // txtDestination_U
             // 
@@ -343,72 +407,11 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "卡板号:";
             // 
-            // chkCount_U
-            // 
-            this.chkCount_U.AutoSize = true;
-            this.chkCount_U.Location = new System.Drawing.Point(18, 86);
-            this.chkCount_U.Name = "chkCount_U";
-            this.chkCount_U.Size = new System.Drawing.Size(66, 16);
-            this.chkCount_U.TabIndex = 30;
-            this.chkCount_U.Text = "成品数:";
-            this.chkCount_U.UseVisualStyleBackColor = true;
-            // 
-            // chkInvoiceTime_U
-            // 
-            this.chkInvoiceTime_U.AutoSize = true;
-            this.chkInvoiceTime_U.Location = new System.Drawing.Point(18, 119);
-            this.chkInvoiceTime_U.Name = "chkInvoiceTime_U";
-            this.chkInvoiceTime_U.Size = new System.Drawing.Size(78, 16);
-            this.chkInvoiceTime_U.TabIndex = 30;
-            this.chkInvoiceTime_U.Text = "发票时间:";
-            this.chkInvoiceTime_U.UseVisualStyleBackColor = true;
-            // 
-            // numCount_U
-            // 
-            this.numCount_U.Location = new System.Drawing.Point(105, 85);
-            this.numCount_U.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.numCount_U.Name = "numCount_U";
-            this.numCount_U.Size = new System.Drawing.Size(49, 21);
-            this.numCount_U.TabIndex = 31;
-            // 
-            // dtpInvoiceTime_U
-            // 
-            this.dtpInvoiceTime_U.CustomFormat = "yyyy-MM-dd hh:mm:ss";
-            this.dtpInvoiceTime_U.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpInvoiceTime_U.Location = new System.Drawing.Point(105, 117);
-            this.dtpInvoiceTime_U.Name = "dtpInvoiceTime_U";
-            this.dtpInvoiceTime_U.Size = new System.Drawing.Size(155, 21);
-            this.dtpInvoiceTime_U.TabIndex = 32;
-            // 
-            // chkInvoice_U
-            // 
-            this.chkInvoice_U.AutoSize = true;
-            this.chkInvoice_U.Location = new System.Drawing.Point(18, 53);
-            this.chkInvoice_U.Name = "chkInvoice_U";
-            this.chkInvoice_U.Size = new System.Drawing.Size(66, 16);
-            this.chkInvoice_U.TabIndex = 33;
-            this.chkInvoice_U.Text = "发票号:";
-            this.chkInvoice_U.UseVisualStyleBackColor = true;
-            // 
-            // chktxtDestination_U
-            // 
-            this.chktxtDestination_U.AutoSize = true;
-            this.chktxtDestination_U.Location = new System.Drawing.Point(18, 152);
-            this.chktxtDestination_U.Name = "chktxtDestination_U";
-            this.chktxtDestination_U.Size = new System.Drawing.Size(54, 16);
-            this.chktxtDestination_U.TabIndex = 34;
-            this.chktxtDestination_U.Text = "备注:";
-            this.chktxtDestination_U.UseVisualStyleBackColor = true;
-            // 
             // Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 536);
+            this.ClientSize = new System.Drawing.Size(874, 631);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvDisplay);

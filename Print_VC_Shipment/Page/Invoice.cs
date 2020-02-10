@@ -84,32 +84,7 @@ LEFT JOIN t_invoice _t ON pallet.parent_sn=_t.pallet_id";
             }
             string sn = txtPallet_S.Text;
             #region 检验
-            string sql =
-$@"WITH pallet AS(
-SELECT child_sn
-FROM view_packed
-WHERE model='pallet'
-AND parent_sn='{sn}')
-
-,carton AS(
-SELECT view_packed.child_sn
-FROM view_packed
-JOIN pallet ON view_packed.parent_sn=pallet.child_sn
-WHERE view_packed.model='carton')
-
-,pack AS(
-SELECT view_packed.child_sn
-FROM view_packed
-JOIN carton ON view_packed.parent_sn=carton.child_sn
-WHERE view_packed.model='pack')
-
-,tray AS(
-SELECT view_packed.child_sn,view_packed.p_date
-FROM view_packed
-JOIN pack ON view_packed.parent_sn=pack.child_sn
-WHERE view_packed.model='tray')
-
-SELECT COUNT(*)::INT FROM tray";
+            string sql = Print_VC_Shipment.Unit.DB.QTYsql.sql(Packing.Model.pallet,sn);
             int countModule = (int)new Unit.DB.Help().ExecuteScalar(sql);
             if (countModule == 0)
             {
@@ -142,6 +117,8 @@ VALUES('{sn}','{txtInvoice_S.Text}',{countModule},'{txtDestination_S.Text}',NOW(
                 sql.AppendLine($",ship_qty = {numCount_U.Value}");
             if (chkInvoiceTime_U.Checked)
                 sql.AppendLine($",ship_date = '{dtpInvoiceTime_U.Value.ToString("yyyy-MM-dd hh:mm:ss")}'");
+            //else
+            //    { sql.AppendLine($",ship_date = NOW()"); }
             if (chktxtDestination_U.Checked)
                 sql.AppendLine($",ship_destination = '{txtDestination_U.Text}'");
             sql.AppendFormat("WHERE pallet_id = '{0}'",txtPallet_U.Text);

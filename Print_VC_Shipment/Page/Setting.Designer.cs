@@ -32,19 +32,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numPallet = new System.Windows.Forms.NumericUpDown();
+            this.numCarton = new System.Windows.Forms.NumericUpDown();
+            this.numPack = new System.Windows.Forms.NumericUpDown();
+            this.numTray = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.numTray = new System.Windows.Forms.NumericUpDown();
-            this.numPack = new System.Windows.Forms.NumericUpDown();
-            this.numCarton = new System.Windows.Forms.NumericUpDown();
-            this.numPallet = new System.Windows.Forms.NumericUpDown();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numTray)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numCarton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPallet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCarton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTray)).BeginInit();
             this.SuspendLayout();
             // 
             // txtProduct
@@ -68,7 +68,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnSave.Location = new System.Drawing.Point(356, 12);
+            this.btnSave.Location = new System.Drawing.Point(299, 76);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(116, 62);
             this.btnSave.TabIndex = 81;
@@ -92,6 +92,98 @@
             this.groupBox2.TabIndex = 82;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "包装";
+            // 
+            // numPallet
+            // 
+            this.numPallet.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numPallet.Location = new System.Drawing.Point(129, 148);
+            this.numPallet.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numPallet.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPallet.Name = "numPallet";
+            this.numPallet.Size = new System.Drawing.Size(90, 35);
+            this.numPallet.TabIndex = 62;
+            this.numPallet.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numCarton
+            // 
+            this.numCarton.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numCarton.Location = new System.Drawing.Point(129, 106);
+            this.numCarton.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numCarton.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numCarton.Name = "numCarton";
+            this.numCarton.Size = new System.Drawing.Size(90, 35);
+            this.numCarton.TabIndex = 62;
+            this.numCarton.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numPack
+            // 
+            this.numPack.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numPack.Location = new System.Drawing.Point(129, 64);
+            this.numPack.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numPack.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPack.Name = "numPack";
+            this.numPack.Size = new System.Drawing.Size(90, 35);
+            this.numPack.TabIndex = 62;
+            this.numPack.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numTray
+            // 
+            this.numTray.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numTray.Location = new System.Drawing.Point(129, 22);
+            this.numTray.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numTray.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTray.Name = "numTray";
+            this.numTray.Size = new System.Drawing.Size(90, 35);
+            this.numTray.TabIndex = 62;
+            this.numTray.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label12
             // 
@@ -133,103 +225,11 @@
             this.label15.TabIndex = 58;
             this.label15.Text = "Tray:";
             // 
-            // numTray
-            // 
-            this.numTray.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numTray.Location = new System.Drawing.Point(129, 22);
-            this.numTray.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.numTray.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numTray.Name = "numTray";
-            this.numTray.Size = new System.Drawing.Size(90, 35);
-            this.numTray.TabIndex = 62;
-            this.numTray.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numPack
-            // 
-            this.numPack.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numPack.Location = new System.Drawing.Point(129, 64);
-            this.numPack.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.numPack.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numPack.Name = "numPack";
-            this.numPack.Size = new System.Drawing.Size(90, 35);
-            this.numPack.TabIndex = 62;
-            this.numPack.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numCarton
-            // 
-            this.numCarton.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numCarton.Location = new System.Drawing.Point(129, 106);
-            this.numCarton.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.numCarton.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numCarton.Name = "numCarton";
-            this.numCarton.Size = new System.Drawing.Size(90, 35);
-            this.numCarton.TabIndex = 62;
-            this.numCarton.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numPallet
-            // 
-            this.numPallet.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numPallet.Location = new System.Drawing.Point(129, 148);
-            this.numPallet.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.numPallet.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numPallet.Name = "numPallet";
-            this.numPallet.Size = new System.Drawing.Size(90, 35);
-            this.numPallet.TabIndex = 62;
-            this.numPallet.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 259);
+            this.ClientSize = new System.Drawing.Size(424, 259);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtProduct);
@@ -238,10 +238,10 @@
             this.Text = "Setting";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numTray)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numCarton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPallet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCarton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTray)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

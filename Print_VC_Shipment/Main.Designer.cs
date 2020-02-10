@@ -60,6 +60,7 @@
             this.btnReprint.TabIndex = 1;
             this.btnReprint.Text = "重新打印";
             this.btnReprint.UseVisualStyleBackColor = true;
+            this.btnReprint.Click += new System.EventHandler(this.btnReprint_Click);
             // 
             // btnSetting
             // 
@@ -92,7 +93,7 @@
             this.tabModel.Location = new System.Drawing.Point(12, 67);
             this.tabModel.Name = "tabModel";
             this.tabModel.SelectedIndex = 0;
-            this.tabModel.Size = new System.Drawing.Size(776, 450);
+            this.tabModel.Size = new System.Drawing.Size(685, 445);
             this.tabModel.TabIndex = 1;
             this.tabModel.SelectedIndexChanged += new System.EventHandler(this.tabModel_SelectedIndexChanged);
             // 
@@ -101,7 +102,7 @@
             this.tabTray.Location = new System.Drawing.Point(4, 22);
             this.tabTray.Name = "tabTray";
             this.tabTray.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTray.Size = new System.Drawing.Size(768, 424);
+            this.tabTray.Size = new System.Drawing.Size(677, 419);
             this.tabTray.TabIndex = 0;
             this.tabTray.Text = "装盘";
             this.tabTray.UseVisualStyleBackColor = true;
@@ -140,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 533);
+            this.ClientSize = new System.Drawing.Size(709, 522);
             this.Controls.Add(this.tabModel);
             this.Controls.Add(this.btnInvoice);
             this.Controls.Add(this.btnSetting);

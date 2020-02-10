@@ -41,7 +41,6 @@
             this.txtSN.Name = "txtSN";
             this.txtSN.Size = new System.Drawing.Size(200, 21);
             this.txtSN.TabIndex = 1;
-            this.txtSN.Text = "N_4878595_0116_T_0005";
             // 
             // rbtnNormalUnpack
             // 

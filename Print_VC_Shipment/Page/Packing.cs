@@ -76,6 +76,27 @@ namespace Print_VC_Shipment.Page
                 }
                 string sn = txtChild.Text;
                 #region 验证
+                //填成品SN的时候检验是否合法
+                if (model == Model.tray)
+                {
+                    if (sn.Length != 17 || !checkSN(sn))
+                    {
+                        MessageBox.Show("该SN不是有效格式的17位号码", "SN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    bool checkSN(string str)
+                    {
+                        string ok = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                        foreach (char c in str)
+                        {
+                            if (!ok.Contains(c))
+                                return false;
+                        }
+                        return true;
+                    }
+                }
+
                 //列表个数超出预设数量
                 if (listvSN.Items.Count>= numQTY.Value)
                 {

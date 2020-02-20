@@ -112,7 +112,7 @@
             this.tabPack.Location = new System.Drawing.Point(4, 22);
             this.tabPack.Name = "tabPack";
             this.tabPack.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPack.Size = new System.Drawing.Size(768, 424);
+            this.tabPack.Size = new System.Drawing.Size(677, 419);
             this.tabPack.TabIndex = 1;
             this.tabPack.Text = "装包";
             this.tabPack.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             this.tabCarton.Location = new System.Drawing.Point(4, 22);
             this.tabCarton.Name = "tabCarton";
             this.tabCarton.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCarton.Size = new System.Drawing.Size(768, 424);
+            this.tabCarton.Size = new System.Drawing.Size(677, 419);
             this.tabCarton.TabIndex = 2;
             this.tabCarton.Text = "装箱";
             this.tabCarton.UseVisualStyleBackColor = true;
@@ -132,9 +132,9 @@
             this.tabPallet.Location = new System.Drawing.Point(4, 22);
             this.tabPallet.Name = "tabPallet";
             this.tabPallet.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPallet.Size = new System.Drawing.Size(768, 424);
+            this.tabPallet.Size = new System.Drawing.Size(677, 419);
             this.tabPallet.TabIndex = 3;
-            this.tabPallet.Text = "装版";
+            this.tabPallet.Text = "装板";
             this.tabPallet.UseVisualStyleBackColor = true;
             // 
             // Main

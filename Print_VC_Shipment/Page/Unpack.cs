@@ -65,17 +65,77 @@ namespace Print_VC_Shipment.Page
                 return;
             }
 
-            //是否数据库已存在打包的
-            string checkSQL = 
-$@"SELECT COUNT(*)::int
-FROM view_packed
-WHERE model='{model}'
-AND parent_sn='{sn}'";
-            if ((int)new Unit.DB.Help().ExecuteScalar(checkSQL) == 0)
+            #region 数据库中该SN存在已入库的，且没有下一级包装入库记录
+            string checkSQL2 =
+$@"WITH tray AS(
+	SELECT child_sn,parent_sn
+	FROM view_packed
+	WHERE model='tray'
+)
+,pack AS(
+	SELECT child_sn,parent_sn
+	FROM view_packed
+	WHERE model='pack'
+)
+,carton AS(
+	SELECT child_sn,parent_sn
+	FROM view_packed
+	WHERE model='carton'
+)
+,pallet AS(
+	SELECT child_sn,parent_sn
+	FROM view_packed
+	WHERE model='pallet'
+)
+,dt AS(
+	SELECT tray.child_sn AS sn
+	,tray.parent_sn AS tray
+	,pack.parent_sn AS pack
+	,carton.parent_sn AS carton
+	,pallet.parent_sn AS pallet
+	FROM tray
+	LEFT JOIN pack ON tray.parent_sn=pack.child_sn
+	LEFT JOIN carton ON pack.parent_sn=carton.child_sn
+	LEFT JOIN pallet ON carton.parent_sn=pallet.child_sn
+)
+SELECT*
+FROM dt
+WHERE {model}='{sn}'";
+            DataTable dt = new DataTable();
+            new Unit.DB.Help().ExecuteDataTable(checkSQL2, ref dt);
+            if (dt.Rows.Count == 0)
             {
-                MessageBox.Show("该SN在数据库中不存在入库记录","数据库",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("该SN在数据库中不存在入库记录", "数据库", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (model != Model.pallet)
+                {
+                    string unpackSN = dr[model.ToString()].ToString();
+                    string unpackParent = dr[(model + 1).ToString()].ToString();
+                    if (unpackSN == "")
+                    {
+                        MessageBox.Show("该SN在数据库中不存在入库记录", "数据库", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (unpackParent != "")
+                    {
+                        MessageBox.Show("该SN在数据库中存在下一级的包装记录", "数据库", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+                else 
+                {
+                    string unpackSN = dr[model.ToString()].ToString();
+                    if (unpackSN == "")
+                    {
+                        MessageBox.Show("该SN在数据库中不存在入库记录", "数据库", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+            }
+            #endregion
             #endregion
 
             if (rbtnDeepUnpack.Checked)

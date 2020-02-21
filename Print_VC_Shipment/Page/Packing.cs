@@ -54,7 +54,7 @@ namespace Print_VC_Shipment.Page
 
         private void btnReserve_Click(object sender, EventArgs e)
         {
-            string sql = $"select fn_apply_no('N', '{Page.Setting.Product}' ,to_char(now(),'yyyyMMdd'), '{model}','{Login.User}')";
+            string sql = $"select SHIP.fn_apply_no('N', '{Page.Setting.Product}' ,to_char(now(),'yyyyMMdd'), '{model}','{Login.User}')";
             txtParent.Text = (string)new Unit.DB.Help().ExecuteScalar(sql);
 
             #region 控件初始化
@@ -141,7 +141,7 @@ namespace Print_VC_Shipment.Page
             {
                 sql =
 $@"SELECT COUNT(*)=0
-FROM pnt_{model}
+FROM SHIP.pnt_{model}
 WHERE module_id='{sn}'
 AND status =1";
             }
@@ -149,8 +149,8 @@ AND status =1";
             {
                 sql =
 $@"SELECT COUNT(*)>0 print
-FROM pnt_{model} Parent
-RIGHT JOIN pnt_{model - 1} Child ON Parent.{model - 1}_id=Child.{model - 1}_id
+FROM SHIP.pnt_{model} Parent
+RIGHT JOIN SHIP.pnt_{model - 1} Child ON Parent.{model - 1}_id=Child.{model - 1}_id
 WHERE Child.{model - 1}_id='{sn}'
 AND (Parent.status !=1 OR Parent.status IS NULL)
 AND Child.status=1";
@@ -183,9 +183,9 @@ AND Child.status=1";
             List<string> sql = new List<string>();
             foreach (ListViewItem var in listvSN.Items)
             {
-                sql.Add($"INSERT INTO pnt_{model} VALUES('{txtParent.Text}', '{var.SubItems["SN"].Text}', NOW(), 1)");
+                sql.Add($"INSERT INTO SHIP.pnt_{model} VALUES('{txtParent.Text}', '{var.SubItems["SN"].Text}', NOW(), 1)");
             }
-            sql.Add($@"insert into t_pnt_manager (pkg_id, pkg_type, act, pkg_date,  pkg_user, status,remark)
+            sql.Add($@"insert into SHIP.t_pnt_manager (pkg_id, pkg_type, act, pkg_date,  pkg_user, status,remark)
 values ('{txtParent.Text}', '{model}', 'printed', NOW(), '{Login.User}', 1,'打印入库')");
 
             if (new Unit.DB.Help().ExecuteTran(sql))
@@ -237,7 +237,7 @@ values ('{txtParent.Text}', '{model}', 'printed', NOW(), '{Login.User}', 1,'打�
             {
                 string sql =
   $@"select count(*)::int
-from view_packed
+from SHIP.view_packed
 where model='{model}'
 and parent_sn='{txtPacked.Text}'";
                 int countSN = (int)new Unit.DB.Help().ExecuteScalar(sql);

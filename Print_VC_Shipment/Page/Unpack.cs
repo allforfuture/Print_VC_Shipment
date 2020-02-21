@@ -69,22 +69,22 @@ namespace Print_VC_Shipment.Page
             string checkSQL2 =
 $@"WITH tray AS(
 	SELECT child_sn,parent_sn
-	FROM view_packed
+	FROM SHIP.view_packed
 	WHERE model='tray'
 )
 ,pack AS(
 	SELECT child_sn,parent_sn
-	FROM view_packed
+	FROM SHIP.view_packed
 	WHERE model='pack'
 )
 ,carton AS(
 	SELECT child_sn,parent_sn
-	FROM view_packed
+	FROM SHIP.view_packed
 	WHERE model='carton'
 )
 ,pallet AS(
 	SELECT child_sn,parent_sn
-	FROM view_packed
+	FROM SHIP.view_packed
 	WHERE model='pallet'
 )
 ,dt AS(
@@ -140,7 +140,7 @@ WHERE {model}='{sn}'";
 
             if (rbtnDeepUnpack.Checked)
             {
-                string sql = $"select fn_deep_unpack('{model}','{sn}','{Login.User}')";
+                string sql = $"select SHIP.fn_deep_unpack('{model}','{sn}','{Login.User}')";
                 string result=(string)new Unit.DB.Help().ExecuteScalar(sql);
                 if (result != "OK")
                 {
@@ -151,8 +151,8 @@ WHERE {model}='{sn}'";
             else
             {
                 List<string> sql = new List<string>();
-                sql.Add($"UPDATE pnt_{model} SET status = 2 WHERE {model}_id ='{sn}' AND status = 1");
-                sql.Add($@"insert into t_pnt_manager (pkg_id, pkg_type, act, pkg_date, pkg_user, status, remark)
+                sql.Add($"UPDATE SHIP.pnt_{model} SET status = 2 WHERE {model}_id ='{sn}' AND status = 1");
+                sql.Add($@"insert into SHIP.t_pnt_manager (pkg_id, pkg_type, act, pkg_date, pkg_user, status, remark)
 values ('{sn}', '{model}', 'normalUnpack', now(), '{Login.User}', 2, '单层拆包')");
                 if (!new Unit.DB.Help().ExecuteTran(sql))
                     return;

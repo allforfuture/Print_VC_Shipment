@@ -24,14 +24,14 @@ namespace Print_VC_Shipment.Page
             string sql =
 @"WITH pallet AS(
 SELECT parent_sn,MAX(p_date) pack_time
-FROM view_packed
+FROM SHIP.view_packed
 WHERE model='pallet'
 GROUP BY parent_sn)
 
 SELECT pallet.parent_sn 卡板号,pallet.pack_time 打包时间,
 _t.invoice_code 发票号,_t.ship_qty 成品数,_t.ship_date 发票时间,_t.ship_destination 备注
 FROM pallet
-LEFT JOIN t_invoice _t ON pallet.parent_sn=_t.pallet_id";
+LEFT JOIN SHIP.t_invoice _t ON pallet.parent_sn=_t.pallet_id";
             bool firstWhere = true;
             if (txtPallet_Q.Text!="")
             {
@@ -92,7 +92,7 @@ LEFT JOIN t_invoice _t ON pallet.parent_sn=_t.pallet_id";
                 return;
             }
             #endregion
-            sql = $@"INSERT INTO t_invoice(pallet_id,invoice_code,ship_qty,ship_destination,ship_date)
+            sql = $@"INSERT INTO SHIP.t_invoice(pallet_id,invoice_code,ship_qty,ship_destination,ship_date)
 VALUES('{sn}','{txtInvoice_S.Text}',{countModule},'{txtDestination_S.Text}',NOW())";
             if (new Unit.DB.Help().ExecuteSQL(sql)==1)
             {
@@ -109,7 +109,7 @@ VALUES('{sn}','{txtInvoice_S.Text}',{countModule},'{txtDestination_S.Text}',NOW(
                 return;
             }
             StringBuilder sql = new StringBuilder();
-            sql.AppendLine("UPDATE t_invoice");
+            sql.AppendLine("UPDATE SHIP.t_invoice");
             sql.Append("SET ");
             if (chkInvoice_U.Checked)
                 sql.AppendLine($"invoice_code = '{txtInvoice_U.Text}'");

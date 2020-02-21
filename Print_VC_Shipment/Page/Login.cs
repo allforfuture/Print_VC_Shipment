@@ -37,7 +37,8 @@ namespace Print_VC_Shipment.Page
 
         void CheckUser()
         {
-            string sql = "Select user_id From t_user Where user_id='" + txtUser.Text + "' and pass='" + txtPassword.Text + "'";
+            //string sql = "Select user_id From SHIP.t_user Where user_id='" + txtUser.Text + "' and pass='" + txtPassword.Text + "'";
+            string sql = "Select user_id From PUBLIC.m_user Where user_id='" + txtUser.Text + "' and pass_wd='" + txtPassword.Text + "'";
             DataTable dt = new DataTable();
             new Unit.DB.Help().ExecuteDataTable(sql, ref dt);
             if (dt.Rows.Count > 0)

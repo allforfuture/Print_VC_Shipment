@@ -18,6 +18,7 @@ namespace Print_VC_Shipment.Page
         }
 
         public static string User { get; set; }
+        public static string Role { get; set; }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -38,13 +39,14 @@ namespace Print_VC_Shipment.Page
         void CheckUser()
         {
             //string sql = "Select user_id From SHIP.t_user Where user_id='" + txtUser.Text + "' and pass='" + txtPassword.Text + "'";
-            string sql = "Select user_id From PUBLIC.m_user Where user_id='" + txtUser.Text + "' and pass_wd='" + txtPassword.Text + "'";
+            string sql = "Select user_id,role_text From PUBLIC.m_user Where user_id='" + txtUser.Text + "' and pass_wd='" + txtPassword.Text + "'";
             DataTable dt = new DataTable();
             new Unit.DB.Help().ExecuteDataTable(sql, ref dt);
             if (dt.Rows.Count > 0)
             {
                 //登陆成功
                 User = dt.Rows[0]["user_id"].ToString();
+                Role = dt.Rows[0]["role_text"].ToString();
                 DialogResult = DialogResult.OK;
             }
             else

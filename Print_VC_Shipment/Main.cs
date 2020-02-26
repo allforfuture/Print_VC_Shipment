@@ -17,6 +17,8 @@ namespace Print_VC_Shipment
         {
             InitializeComponent();
             Text = Application.ProductName + " " + Application.ProductVersion;
+            if(Page.Login.Role!= "Admin")
+                btnSetting.Enabled = btnUnpack.Enabled = false;
             showPage();
         }
 

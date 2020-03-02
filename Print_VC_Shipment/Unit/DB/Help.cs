@@ -30,8 +30,9 @@ namespace Print_VC_Shipment.Unit.DB
                 try { return cmd.ExecuteNonQuery(); }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message,"数据库",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    return -1; }
+                    MessageBox.Show(ex.Message, "数据库", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return -1;
+                }
             }
         }
 

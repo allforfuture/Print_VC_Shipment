@@ -61,6 +61,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Page\ChangePWD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page\ChangePWD.Designer.cs">
+      <DependentUpon>ChangePWD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page\Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     <Compile Include="Unit\Setting\Config.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\ChangePWD.resx">
+      <DependentUpon>ChangePWD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page\Invoice.resx">
       <DependentUpon>Invoice.cs</DependentUpon>

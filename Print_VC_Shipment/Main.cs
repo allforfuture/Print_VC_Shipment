@@ -75,5 +75,10 @@ namespace Print_VC_Shipment
         {
             new Page.Reprint().ShowDialog();
         }
+
+        private void btnChangePWD_Click(object sender, EventArgs e)
+        {
+            new Page.ChangePWD().ShowDialog();
+        }
     }
 }

@@ -37,6 +37,7 @@
             this.tabPack = new System.Windows.Forms.TabPage();
             this.tabCarton = new System.Windows.Forms.TabPage();
             this.tabPallet = new System.Windows.Forms.TabPage();
+            this.btnChangePWD = new System.Windows.Forms.Button();
             this.tabModel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,11 +138,23 @@
             this.tabPallet.Text = "装板";
             this.tabPallet.UseVisualStyleBackColor = true;
             // 
+            // btnChangePWD
+            // 
+            this.btnChangePWD.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnChangePWD.Location = new System.Drawing.Point(511, 12);
+            this.btnChangePWD.Name = "btnChangePWD";
+            this.btnChangePWD.Size = new System.Drawing.Size(119, 49);
+            this.btnChangePWD.TabIndex = 2;
+            this.btnChangePWD.Text = "修改密码";
+            this.btnChangePWD.UseVisualStyleBackColor = true;
+            this.btnChangePWD.Click += new System.EventHandler(this.btnChangePWD_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 522);
+            this.Controls.Add(this.btnChangePWD);
             this.Controls.Add(this.tabModel);
             this.Controls.Add(this.btnInvoice);
             this.Controls.Add(this.btnSetting);
@@ -165,5 +178,6 @@
         private System.Windows.Forms.TabPage tabPack;
         private System.Windows.Forms.TabPage tabCarton;
         private System.Windows.Forms.TabPage tabPallet;
+        private System.Windows.Forms.Button btnChangePWD;
     }
 }

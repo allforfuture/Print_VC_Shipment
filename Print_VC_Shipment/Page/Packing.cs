@@ -95,6 +95,12 @@ namespace Print_VC_Shipment.Page
                         }
                         return true;
                     }
+
+                    if (sn.Substring(1, Setting.Product.Length) != Setting.Product)
+                    {
+                        MessageBox.Show("该SN的物料代码不匹配", "SN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                 }
 
                 //列表个数超出预设数量

@@ -54,7 +54,11 @@ namespace Print_VC_Shipment.Page
 
         private void btnReserve_Click(object sender, EventArgs e)
         {
-            string sql = $"select SHIP.fn_apply_no('N', '{Page.Setting.Product}' ,to_char(now(),'yyyyMMdd'), '{model}','{Login.User}')";
+            string sql = string.Format("select SHIP.fn_apply_no('N', '{0}' ,{1}, '{2}','{3}')"
+                , Page.Setting.Product
+                , rbtnNow.Checked ? "to_char(now(),'yyyyMMdd')" : "'" + dtpSelect.Value.ToString("yyyyMMdd") + "'"
+                , model
+                , Login.User);
             txtParent.Text = (string)new Unit.DB.Help().ExecuteScalar(sql);
 
             #region 控件初始化

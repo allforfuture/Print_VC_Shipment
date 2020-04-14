@@ -44,6 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPacked = new System.Windows.Forms.TextBox();
             this.printDocTray = new System.Drawing.Printing.PrintDocument();
+            this.rbtnNow = new System.Windows.Forms.RadioButton();
+            this.dtpSelect = new System.Windows.Forms.DateTimePicker();
+            this.rbtnSelect = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numQTY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPacked)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +54,7 @@
             // lblParent
             // 
             this.lblParent.AutoSize = true;
-            this.lblParent.Location = new System.Drawing.Point(21, 27);
+            this.lblParent.Location = new System.Drawing.Point(21, 37);
             this.lblParent.Name = "lblParent";
             this.lblParent.Size = new System.Drawing.Size(59, 12);
             this.lblParent.TabIndex = 0;
@@ -68,7 +71,7 @@
             // 
             // txtParent
             // 
-            this.txtParent.Location = new System.Drawing.Point(86, 24);
+            this.txtParent.Location = new System.Drawing.Point(86, 34);
             this.txtParent.Name = "txtParent";
             this.txtParent.ReadOnly = true;
             this.txtParent.Size = new System.Drawing.Size(200, 21);
@@ -84,7 +87,7 @@
             // 
             // btnReserve
             // 
-            this.btnReserve.Location = new System.Drawing.Point(294, 22);
+            this.btnReserve.Location = new System.Drawing.Point(294, 32);
             this.btnReserve.Name = "btnReserve";
             this.btnReserve.Size = new System.Drawing.Size(75, 23);
             this.btnReserve.TabIndex = 2;
@@ -185,7 +188,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(402, 30);
+            this.label2.Location = new System.Drawing.Point(402, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 67;
@@ -193,7 +196,7 @@
             // 
             // txtPacked
             // 
-            this.txtPacked.Location = new System.Drawing.Point(461, 27);
+            this.txtPacked.Location = new System.Drawing.Point(461, 34);
             this.txtPacked.Name = "txtPacked";
             this.txtPacked.Size = new System.Drawing.Size(200, 21);
             this.txtPacked.TabIndex = 0;
@@ -203,11 +206,43 @@
             // 
             this.printDocTray.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocTray_PrintPage);
             // 
+            // rbtnNow
+            // 
+            this.rbtnNow.AutoSize = true;
+            this.rbtnNow.Checked = true;
+            this.rbtnNow.Location = new System.Drawing.Point(86, 10);
+            this.rbtnNow.Name = "rbtnNow";
+            this.rbtnNow.Size = new System.Drawing.Size(71, 16);
+            this.rbtnNow.TabIndex = 68;
+            this.rbtnNow.TabStop = true;
+            this.rbtnNow.Text = "当前时间";
+            this.rbtnNow.UseVisualStyleBackColor = true;
+            // 
+            // dtpSelect
+            // 
+            this.dtpSelect.Location = new System.Drawing.Point(239, 8);
+            this.dtpSelect.Name = "dtpSelect";
+            this.dtpSelect.Size = new System.Drawing.Size(130, 21);
+            this.dtpSelect.TabIndex = 69;
+            // 
+            // rbtnSelect
+            // 
+            this.rbtnSelect.AutoSize = true;
+            this.rbtnSelect.Location = new System.Drawing.Point(176, 10);
+            this.rbtnSelect.Name = "rbtnSelect";
+            this.rbtnSelect.Size = new System.Drawing.Size(59, 16);
+            this.rbtnSelect.TabIndex = 68;
+            this.rbtnSelect.Text = "自定义";
+            this.rbtnSelect.UseVisualStyleBackColor = true;
+            // 
             // Packing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 422);
+            this.Controls.Add(this.dtpSelect);
+            this.Controls.Add(this.rbtnSelect);
+            this.Controls.Add(this.rbtnNow);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.listvSN);
@@ -249,5 +284,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPacked;
         private System.Drawing.Printing.PrintDocument printDocTray;
+        private System.Windows.Forms.RadioButton rbtnNow;
+        private System.Windows.Forms.DateTimePicker dtpSelect;
+        private System.Windows.Forms.RadioButton rbtnSelect;
     }
 }

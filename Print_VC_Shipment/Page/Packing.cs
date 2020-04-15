@@ -158,12 +158,21 @@ AND status =1";
             else
             {
                 sql =
-$@"SELECT COUNT(*)>0 print
-FROM SHIP.pnt_{model} Parent
-RIGHT JOIN SHIP.pnt_{model - 1} Child ON Parent.{model - 1}_id=Child.{model - 1}_id
-WHERE Child.{model - 1}_id='{sn}'
-AND (Parent.status !=1 OR Parent.status IS NULL)
-AND Child.status=1";
+$@"WITH Child AS(
+	SELECT COUNT(*)>0 AS isExist
+	FROM ship.view_packed
+	WHERE model='{model-1}'
+	AND parent_sn='{sn}'
+)
+,Parent AS(
+	SELECT COUNT(*)>0 AS isExist
+	FROM ship.view_packed
+	WHERE model='{model}'
+	AND child_sn='{sn}'
+)
+
+SELECT Child.isExist=TRUE AND Parent.isExist=FALSE
+FROM Child,Parent";
             }
 
             return (bool)(new Unit.DB.Help().ExecuteScalar(sql));

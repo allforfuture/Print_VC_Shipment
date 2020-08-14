@@ -20,6 +20,7 @@ namespace Print_VC_Shipment
             if(Page.Login.Role!= "Admin")
                 btnSetting.Enabled = btnUnpack.Enabled = btnReprint.Enabled = false;
             showPage();
+            Unit.NTRS.Document.CreateDocument();
         }
 
         private void btnSetting_Click(object sender, EventArgs e)

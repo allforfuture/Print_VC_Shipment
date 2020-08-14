@@ -55,7 +55,7 @@ namespace Print_VC_Shipment.Page
         private void btnReserve_Click(object sender, EventArgs e)
         {
             string sql = string.Format("select SHIP.fn_apply_no('N', '{0}' ,{1}, '{2}','{3}')"
-                , Page.Setting.Product
+                , Page.Setting.Product.Substring(1, Setting.Product.Length - 1)
                 , rbtnNow.Checked ? "to_char(now(),'yyyyMMdd')" : "'" + dtpSelect.Value.ToString("yyyyMMdd") + "'"
                 , model
                 , Login.User);
@@ -100,13 +100,24 @@ namespace Print_VC_Shipment.Page
                         return true;
                     }
 
-                    if (sn.Substring(1, Setting.Product.Length) != Setting.Product)
+                    if (sn.Substring(0, Setting.Product.Length) != Setting.Product)
                     {
                         MessageBox.Show("该SN的物料代码不匹配", "SN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                }
 
+                    string result = Unit.NTRS.API.SN_Judge(sn, out string detail);
+                    string checkTotal = result == "PASS" ? "0" : "1";
+                    string checkItem = result == "PASS" ? "0" : "1";
+                    Unit.NTRS.Log.WriteLog(sn, detail, result);
+                    Unit.NTRS.Pqm.WriteCSV(sn, checkItem, checkTotal);
+                    if (result != "PASS")
+                    {
+                        MessageBox.Show(result, "NTRS验证未通过", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                
                 //列表个数超出预设数量
                 if (listvSN.Items.Count>= numQTY.Value)
                 {

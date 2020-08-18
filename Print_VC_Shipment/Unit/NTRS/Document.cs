@@ -14,7 +14,7 @@ namespace Print_VC_Shipment.Unit.NTRS
         public static List<string> pathList = new List<string>()
         {
             AppDomain.CurrentDomain.BaseDirectory + "log\\",
-            AppDomain.CurrentDomain.BaseDirectory + "pqm\\"
+            ConfigurationManager.AppSettings["path"]
         };
 
         public static void CreateDocument()
@@ -63,7 +63,7 @@ namespace Print_VC_Shipment.Unit.NTRS
         public static void WriteCSV(string SN,string checkItem,string checkTotal)
         {
             string fileName = type + factory + building + line + process + DateTime.Now.ToString("yyyyMMddHHmmss") + SN;
-            string path = Document.pathList[1] + fileName + ".csv";
+            string path = Path.Combine(Document.pathList[1], fileName + ".csv");
             using (StreamWriter file = new StreamWriter(path, true))
             {
                 string[] csvStr = new string[] { type, factory, building, line, process, SN, "", "","", DateTime.Now.ToString("yy,MM,dd,HH,mm,ss"), "1", inspect,
